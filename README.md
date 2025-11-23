@@ -32,6 +32,9 @@ Design an intuitive interface that:
 
 ⸻
 Demo: https://youtu.be/qd5TlojL1l8
+
+
+
 Images: 
 <img width="120" height="262" alt="IMG_6681" src="https://github.com/user-attachments/assets/bc2b2f7a-9b97-47ad-8571-d05e4647377e" />
 <img width="120" height="262" alt="IMG_6680" src="https://github.com/user-attachments/assets/ed07308f-c3c9-4017-a7cf-c081d2487875" />
