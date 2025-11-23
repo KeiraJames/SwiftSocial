@@ -1,22 +1,5 @@
 //
 //  VideoPage.swift
-//  YourApp
-//
-//  VIEW — Shows one video page, including:
-//  • AVPlayer
-//  • Like/double-tap
-//  • Sidebar with swipe-left profile navigation
-//
-//  VideoPage.swift
-//  test
-//
-//
-//  VideoPage.swift
-//  test
-//
-
-//
-//  VideoPage.swift
 //  test
 //
 
@@ -41,10 +24,14 @@ struct VideoPage: View {
         GeometryReader { geo in
             ZStack {
 
-                // VIDEO
+                // ===========================
+                // BACKGROUND VIDEO
+                // ===========================
                 VideoPlayerContainer(player: player)
 
+                // ===========================
                 // HEART POPUP
+                // ===========================
                 if showHeart {
                     Image(systemName: "heart.fill")
                         .foregroundColor(.white)
@@ -53,62 +40,75 @@ struct VideoPage: View {
                 }
 
                 // ===========================
-                //   ICONS + CAPTION STACK
+                // MAIN LAYOUT STACK
                 // ===========================
                 VStack {
                     Spacer()
 
+                    // ==========================================
+                    // ICONS + FRIEND BUBBLES MIRRORING SIDEBAR
+                    // ==========================================
                     HStack(alignment: .bottom) {
 
                         if handPreference == .left {
+                            // LEFT-HANDED → icons left, bubbles right
                             sidebar(in: geo)
                             Spacer()
+
+                            likerBubbles
+                                .padding(.bottom, 15)
+                                .padding(.trailing, 20)
+
                         } else {
+                            // RIGHT-HANDED → bubbles left, icons right
+                            likerBubbles
+                                .padding(.bottom, 18)
+                                .padding(.leading, 20)
+
                             Spacer()
                             sidebar(in: geo)
                         }
                     }
                     .padding(.bottom, 25)
 
+                    // ===========================
                     // CAPTION ALWAYS LEFT
+                    // ===========================
                     caption
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 12)
                         .padding(.bottom, 100)
                 }
+                .zIndex(10)
             }
             .gesture(tapGestures(in: geo))
         }
     }
 
     // ===========================
-    //   CAPTION (UPDATED)
+    // CAPTION
     // ===========================
-
     var caption: some View {
-        VStack(alignment: .leading, spacing: 4) {
-
-            // USERNAME: bigger + bolder
-            Text("@\(video.username)")
+        VStack(alignment: .leading, spacing: 6) {
+            Text(video.username)
                 .foregroundColor(.white)
-                .font(.system(size: 20, weight: .heavy))   // ★ was ~17, now +3px & heavier
+                .font(.system(size: 22, weight: .black)) // +3 px and bolder
 
-            // CAPTION: 2px smaller
             Text(video.caption)
-                .foregroundColor(.white.opacity(0.95))
-                .font(.system(size: 13))                  // ★ was ~15 → now smaller
+                .foregroundColor(.white)
+                .font(.system(size: 14)) // 2px smaller
         }
     }
 
     // ===========================
-    //   SIDEBAR ICONS
+    // RIGHT/LEFT SIDEBAR ICONS
     // ===========================
-
     func sidebar(in geo: GeometryProxy) -> some View {
         VStack(spacing: 22) {
 
+            // Profile bubble
             Circle()
-                .fill(Color(red: 10/255, green: 10/255, blue: 45/255).opacity(0.75))
+                .fill(Color.gray.opacity(0.3))
                 .frame(width: 42, height: 42)
                 .overlay(
                     Text(String(video.username.prefix(1)))
@@ -116,6 +116,7 @@ struct VideoPage: View {
                         .font(.system(size: 16, weight: .bold))
                 )
 
+            // Like button
             VStack(spacing: 3) {
                 Image(systemName: isLiked ? "heart.fill" : "heart")
                     .foregroundColor(isLiked ? .red : .white)
@@ -125,6 +126,7 @@ struct VideoPage: View {
                     .foregroundColor(.white)
             }
 
+            // Comments button
             VStack(spacing: 3) {
                 Image(systemName: "bubble.right")
                     .foregroundColor(.white)
@@ -134,6 +136,7 @@ struct VideoPage: View {
                     .foregroundColor(.white)
             }
 
+            // Save
             VStack(spacing: 3) {
                 Image(systemName: "bookmark")
                     .foregroundColor(.white)
@@ -142,6 +145,7 @@ struct VideoPage: View {
                     .foregroundColor(.white)
             }
 
+            // Share
             VStack(spacing: 3) {
                 Image(systemName: "arrowshape.turn.up.right")
                     .foregroundColor(.white)
@@ -151,20 +155,37 @@ struct VideoPage: View {
             }
         }
         .frame(width: geo.size.width * 0.15)
-        .padding(.trailing, handPreference == .right ? 4 : 0)
-        .padding(.leading, handPreference == .left ? 4 : 0)
     }
 
     // ===========================
-    //   DOUBLE TAP + PAUSE
+    // FRIEND BUBBLES (DYNAMIC)
     // ===========================
+    var likerBubbles: some View {
+        HStack(spacing: -10) { // overlap like Instagram
+            ForEach(1...3, id: \.self) { index in
+                Image("person\(index)")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 36, height: 36)
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+            }
+        }
+    }
 
+    // ===========================
+    // DOUBLE TAP + PAUSE
+    // ===========================
     func tapGestures(in geo: GeometryProxy) -> some Gesture {
 
         let doubleTap = TapGesture(count: 2)
             .onEnded {
                 isLiked = true
-                heartPosition = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
+                heartPosition = CGPoint(x: geo.size.width / 2,
+                                        y: geo.size.height / 2)
 
                 withAnimation(.easeOut(duration: 0.3)) {
                     showHeart = true

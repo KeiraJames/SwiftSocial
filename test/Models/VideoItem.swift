@@ -13,4 +13,5 @@ struct VideoItem: Identifiable {
     let username: String        // Creator username
     let caption: String         // Video caption
     let sound: String           // Sound name or attribution
+    let likers: [String]
 }

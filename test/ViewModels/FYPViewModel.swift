@@ -25,11 +25,11 @@ class FYPViewModel: ObservableObject {
 
     @Published var videos: [VideoItem] = [
         VideoItem(filename: "video1_opt", username: "Ember Street Kitchen",
-                  caption: "Serving flavors you’ll crave all week.", sound: ""),
+                  caption: "Serving flavors you’ll crave all week.", sound: "", likers: ["person1", "person2", "person3"]),
         VideoItem(filename: "video2_opt", username: "Brush & Brew Studio",
-                  caption: "Create something you’ll actually want to keep.", sound: ""),
-        VideoItem(filename: "video3_opt", username: "Saffron & Smoke",
-                  caption: "Bold dishes that stay on your mind.", sound: "")
+                  caption: "Create something you’ll actually want to keep.", sound: "", likers: ["person1", "person2", "person3"]),
+        VideoItem(filename: "video3_opt", username: "QC Spa",
+                  caption: "Relax and rejuvenate.", sound: "", likers: ["person1", "person2", "person3"])
     ]
 
     @Published var activeIndex: Int = 0
