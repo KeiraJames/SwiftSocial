@@ -1,17 +1,17 @@
-//
-//  testApp.swift
-//  test
-//
-//  Created by Keira James on 11/22/25.
-//
-
 import SwiftUI
 
 @main
 struct testApp: App {
+
+    @AppStorage("handPreference") var handPreference: HandPreference?
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if handPreference == nil {
+                OnboardingCoordinator()
+            } else {
+                ContentView()
+            }
         }
     }
 }
