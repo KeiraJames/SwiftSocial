@@ -1,172 +1,162 @@
-📱 SwiftSocial
+SwiftSocial
 
 A social discovery app for places, activities, and experiences — built with SwiftUI (MVVM)
 
-SwiftSocial helps users find activities, see which friends are interested, browse events, and book reservations in one tap. The UI is inspired by TikTok, Instagram, and Meetup — optimized for addictiveness, social proof, and frictionless action.
+SwiftSocial helps users discover activities, see which friends are interested, book reservations instantly, and explore venues in a TikTok-style immersive feed.
 
-This project was built for the SwiftUI Track (Social Discovery UI) with a focus on product-market fit, ergonomic interaction design, and clean MVVM architecture.
+This project was built for the SwiftUI Social Discovery Track, focusing on product-market fit, addictiveness, and clean architecture.
 
 ⸻
 
-🌟 Product Overview
+📖 Table of Contents
+	•	Overview
+	•	Features
+	•	Architecture
+	•	Architecture Diagram
+	•	Installation
+	•	Third-Party Inspiration
+	•	License
+
+⸻
+
+Overview
 
 Goal
 
-Build an intuitive, scroll-based discovery interface that:
+Design an intuitive interface that:
 	•	Shows venues and activities
-	•	Displays which friends/mutuals are interested
-	•	Allows frictionless reservations
-	•	Encourages users to attend places together
-	•	Uses TikTok-style interactions to increase engagement
-
-User Flow
-	1.	Onboarding → Enter phone → Enter email → Choose left/right handed UI
-	2.	FYP Video Feed → Swipe vertically to explore activities
-	3.	Friend Interest Signals → Floating profile bubbles
-	4.	Comments/Reviews → Mix of social comments + Google/Yelp reviews
-	5.	Reservations → One-tap booking with success haptic + calendar confirmation
-	6.	Search Page → Filter events by category, time, tags, and images
-	7.	Profile Page → Swipe left to view creator or venue profile
+	•	Displays which friends/mutuals are also interested
+	•	Allows one-tap reservations
+	•	Increases social connection and attendance
+	•	Uses immersive micro-interactions to boost retention
 
 ⸻
 
-🚀 Features 
+Features
 
-📹 Immersive Video-Based Discovery
+🎥 Immersive Video Feed (TikTok-style)
 
-A TikTok-style full-screen video feed where you can:
-	•	Swipe vertically
-	•	View venue highlights
-	•	See captions & profiles
-	•	Immediately gauge if a place looks fun
+The For You Page uses:
+	•	Full-screen videos
+	•	Vertical swiping
+	•	Caption + overlay UI
+	•	Gesture-based interactions (tap, double-tap, swipe-left for profile)
 
-This format is proven to create high engagement (TikTok/IG Reels UX research).
-
-⸻
-
-💸 Swipe FYP by Price Level ($ → $$$$)
-
-Users can swipe between price tiers in the top navigation bar:
-	•	$
-	•	$$
-	•	$$$
-	•	$$$$
-
-Why this is effective
-	•	People budget-filter before choosing an activity
-	•	Reduces cognitive load and choice fatigue
-	•	Mimics TikTok’s “interest filtering,” which improves session duration
-	•	Drives more relevant reservations
+TikTok’s interaction model is proven to maximize session time and dopamine-driven discovery.
 
 ⸻
 
-✋ Left-Handed / Right-Handed UI Personalization
+💸 Swipe FYP by Price Level
 
-During onboarding, users choose their dominant hand.
-This repositions:
-	•	Like/comment/share sidebar
-	•	Floating friend bubbles
-	•	Gesture hit zones
+Top nav bar lets users filter content by:
+$ · $$ · $$$ · $$$$
 
-Why it increases retention
+Why it works
+	•	Users budget-filter subconsciously
+	•	Reduces cognitive overload
+	•	Mimics TikTok’s “topic filtering” which increases engagement
+	•	Leads to more relevant activity selection
 
-TikTok and Instagram both test UI weight adjustments based on hand ergonomics.
-Dominant-hand UI reduces thumb travel distance → feels more natural → more addicting.
+⸻
+
+✋ Left-Handed / Right-Handed UI
+
+Onboarding asks users their dominant hand.
+
+This changes:
+	•	Sidebar icon placement
+	•	Floating friend bubble location
+	•	Gesture hit-zones
+
+Why this increases retention
+
+TikTok & Instagram both optimize UI for thumb ergonomics.
+Shorter thumb-travel = more frequent interaction = higher addiction loop.
 
 ⸻
 
 💛 One-Tap Reservation System
 
-Designed for zero friction.
+Designed for instant, frictionless conversion.
 
-✔ Auto uses phone + email from onboarding
-✔ No card prompt if the activity is free
-✔ If paid → optional card popup (non-invasive)
-✔ Smooth full-screen confirmation with success haptic
-✔ Automatically returns to video feed
+✔ Uses phone + email from onboarding
+✔ No card prompt unless needed
+✔ Smooth overlay confirmation
+✔ Success haptic feedback
+✔ Auto-returns to the video feed
 
-Why this works
+Why it’s smart
 
-People bail when asked to enter payment info upfront.
-By delaying friction, conversion rates dramatically increase.
+People abandon booking flows when asked for payment info upfront.
+Delayed friction dramatically boosts conversion.
 
 ⸻
 
 🫧 Floating “Friends Who Liked” Bubbles
 
-Three floating circular avatars on the opposite side of the sidebar.
+Three floating circular avatars appear opposite the sidebar.
 
-Why it boosts social discovery
+Social Proof Works
 
-Similar to Instagram’s “seen by friends” clusters:
-	•	Builds trust
-	•	Creates FOMO
-	•	Encourages users to attend with others
-	•	Makes venues feel more popular/active
+Instagram introduced this mechanic because:
+	•	Familiar faces = trust
+	•	Mutual engagement = stronger FOMO
+	•	Encourages exploring places together
+
+This feature fuels natural connection.
 
 ⸻
 
 💬 Smart Comments (Reviews + Social Comments)
 
-Your comment section mixes:
+A comment panel mixes:
 	•	Google Review snippets
-	•	Yelp summaries
-	•	Real social comments
+	•	Yelp insights
+	•	User comments
 
-Why it’s smart
+Why this is powerful
 
-Users always check reviews before committing.
-Bringing reviews into the scroll removes exit points and keeps the user in-app.
+Users always check reviews.
+Embedding reviews inside the FYP eliminates exit points, increasing retention.
 
 ⸻
 
 🔎 Meetup-Inspired Search View
 
 Includes:
-	•	Category carousel
-	•	6+ event cards per scroll
-	•	Real images (img1.jpg … img6.jpg)
-	•	Tags, host, distance, date/time
+	•	Category carousel (All Events, New, Social, Hobbies, Sports)
+	•	Large event cards
+	•	Real venue images
+	•	Distance, host, date/time, tags
 
-Why this increases engagement
+Why this works
 
-This replicates Meetup’s high-conversion pattern:
-“Scroll → Skim → Save → Attend”
-
-⸻
-
-🎥 Gesture System
-	•	Vertical swipe → next video
-	•	Horizontal swipe → profile open
-	•	Tap → pause
-	•	Double tap → like
-	•	Comment tap → opens comment sheet
-	•	Price swipe → filter content
+Meetup’s scroll-and-skim design is proven for activity discovery and personal planning.
 
 ⸻
 
-🗺 Minimal Map Integration
+🧭 Map Icon Navigation
 
-Simple map icon in the top-left for future venue navigation features.
+A simple map icon in the top-left prepares for deeper location-based features.
 
 ⸻
 
 🎨 Polished Visual Design
-	•	Dark immersive theme (#0A0A2D)
-	•	Floating layers & opacity animations
+	•	Dark theme (#0A0A2D)
+	•	Smooth haptics
+	•	Floating layers
 	•	MVVM separation
-	•	Smooth haptics on interactions
+	•	Gesture-driven UI
 
 ⸻
 
-🏗 Architecture
+Architecture
 
 Pattern
 
-Model → View → ViewModel (MVVM)
-Clean SwiftUI structure with reactive @StateObject bindings.
+MVVM (Model–View–ViewModel)
 
-Key Layers
+Directory Structure
 
 /Models
     VideoItem.swift
@@ -178,61 +168,47 @@ Key Layers
 
 /Views
     ContentView.swift
-    FYP
+    FYP/
         FYPView.swift
         VideoPage.swift
         CommentsSimpleView.swift
         ProfileView.swift
-    Reservation
+    Reservation/
         ReservationFullScreen.swift
-    Onboarding
+    Onboarding/
         OnboardingCoordinator.swift
         PhoneEntryView.swift
         EmailEntryView.swift
         HandPreferenceView.swift
-    Search
+    Search/
         SearchView.swift
 
+Clear separation ensures:
+	•	Scalable UI
+	•	Testable business logic
+	•	Minimal side effects
+	•	Clean state management with @StateObject & @Published
 
 ⸻
 
-🧩 High-Level Architecture Diagram
+Architecture Diagram
 
- ┌───────────────────────┐
- │      Onboarding       │
- │ phone → email → hand  │
- └──────────┬────────────┘
-            │
-            ▼
- ┌─────────────────────────┐
- │       ContentView        │
- │  ZStack = (Layers)       │
- │  - FYPView               │
- │  - ReservationOverlay    │
- │  - ProfileSlide          │
- │  - BottomNav             │
- └──────────┬───────────────┘
-            │
-            ▼
- ┌─────────────────────────┐
- │        FYPView          │
- │  Vertical Swipe Feed    │
- └──────────┬──────────────┘
-            │
-            ▼
- ┌─────────────────────────┐
- │       VideoPage         │
- │ (likes, comments,       │
- │  floating bubbles, etc.)│
- └─────────────────────────┘
+flowchart TD
 
- ➤ SearchView pulled from NavStack
- ➤ ReservationFullScreen overlays FYP
+A[Onboarding<br/>phone → email → hand choice] --> B[ContentView ZStack]
+
+B --> C[FYPView<br/>Vertical swipe feed]
+C --> D[VideoPage<br/>Likes, comments, floating bubbles]
+
+B --> E[ReservationFullScreen<br/>1-tap overlay]
+B --> F[ProfileView<br/>Swipe-left to open]
+
+B --> G[SearchView<br/>Meetup-style categories & events]
 
 
 ⸻
 
-🛠 Installation & Setup
+Installation
 
 1️⃣ Clone the Repository
 
@@ -241,11 +217,11 @@ cd SwiftSocial
 
 2️⃣ Open in Xcode
 
-SwiftSocial.xcodeproj
+Open SwiftSocial.xcodeproj
 
-3️⃣ Add your images
+3️⃣ Add Images
 
-Place these in the root of the project (test/):
+Place the following in your project root:
 
 img1.jpg
 img2.jpg
@@ -253,21 +229,22 @@ img3.jpg
 img4.jpg
 img5.jpg
 img6.jpg
+
 person1.jpg
 person2.jpg
 person3.jpg
 
-4️⃣ Run on iOS Simulator
-
-Requires:
+4️⃣ Requirements
 	•	Xcode 15+
-	•	iOS 17+ target
+	•	iOS 17+
 
 ⸻
 
-📚 Third-Party References & Inspiration
-	•	TikTok Interaction Patterns — ByteDance UI/UX research on retention
-	•	Instagram Friend Indicators — Meta’s social proof clustering
-	•	Meetup Category UX — Scroll-based activity discovery
-	•	Apple HIG — Haptics & animation guidelines
-	•	Google/Yelp Review Structures — Used for comment fusion logic
+Third-Party Inspiration
+	•	TikTok Interaction Research — Vertical swipe UX, engagement loops
+	•	Instagram Social Proof UI — Floating profile clusters
+	•	Meetup Discovery Flow — Category + event card hierarchy
+	•	Apple HIG — Motion, haptics, dark-mode color rules
+	•	Google & Yelp Review Data Structures — Used for comment fusion logic
+
+⸻
