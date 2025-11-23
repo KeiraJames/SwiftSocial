@@ -31,6 +31,15 @@ Design an intuitive interface that:
 	•	Uses immersive micro-interactions to boost retention
 
 ⸻
+Demo: https://youtu.be/qd5TlojL1l8
+Images: 
+<img width="1206" height="2622" alt="IMG_6681" src="https://github.com/user-attachments/assets/bc2b2f7a-9b97-47ad-8571-d05e4647377e" />
+<img width="1206" height="2622" alt="IMG_6680" src="https://github.com/user-attachments/assets/ed07308f-c3c9-4017-a7cf-c081d2487875" />
+
+<img width="593" height="373" alt="Screenshot 2025-11-23 at 3 40 12 PM" src="https://github.com/user-attachments/assets/4d2eb9c3-e23d-466c-acbe-540e98278f26" />
+
+<img width="405" height="570" alt="Screenshot 2025-11-23 at 3 39 56 PM" src="https://github.com/user-attachments/assets/6464cb74-ef1f-4b08-9925-ae5ddab6480d" />
+
 
 Features
 
