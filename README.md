@@ -40,6 +40,18 @@ Design an intuitive interface that:
 
 ### Images
 
+Search Page:
+<img width="120" height="262" alt="IMG_6681" src="https://github.com/user-attachments/assets/2c1eabc8-1510-443c-adcd-c55b92f3868d" />
+
+FYP 
+<img width="120" height="262" alt="IMG_6680" src="https://github.com/user-attachments/assets/c204d58c-49e0-440a-9581-87027d47fd51" />
+
+Comments:
+<img width="393" height="273" alt="Screenshot 2025-11-23 at 3 40 12 PM" src="https://github.com/user-attachments/assets/d44e60f7-5b2b-4c3e-9395-6646ed60fbf9" />
+
+Business Profile Page:
+<img width="205" height="370" alt="Screenshot 2025-11-23 at 3 39 56 PM" src="https://github.com/user-attachments/assets/7676947a-803b-4bcd-a424-75b76594b773" />
+
 -----
 
 ## Features
